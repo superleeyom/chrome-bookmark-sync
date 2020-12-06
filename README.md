@@ -15,7 +15,7 @@
 name: ChromeBookmarksSyncApplication
 
 on:
-	# 开启手动执行
+  # 开启手动执行
   workflow_dispatch:
   # 触发条件，当有代码push到master分支的时候，就触发一次构建
   push:
@@ -32,7 +32,7 @@ env:
 # 任务
 jobs:
   build:
-  	# 设置系统环境
+    # 设置系统环境
     runs-on: ubuntu-latest
     steps:
     # 检出代码
@@ -42,12 +42,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-		
-		# 执行maven命令，进行编译，并执行脚本，生成 README.md
+
+    # 执行maven命令，进行编译，并执行脚本，生成 README.md
     - name: execute application
       run: mvn -B clean compile exec:java --file pom.xml
 
-		# 提交代码
+    # 提交代码
     - name: update README.md
       uses: github-actions-x/commit@v2.6
       with:

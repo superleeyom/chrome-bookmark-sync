@@ -72,9 +72,7 @@ public class GenerateReadmeUtil {
                 return;
             }
         } catch (Exception e) {
-            errorMsg = "README.md 生成失败，书签数据解析失败";
-            log.error(errorMsg + "：{}", e);
-            readmeMdWriter.write(errorMsg);
+            log.error("README.md 生成失败，书签数据解析失败：", e);
             return;
         }
 
