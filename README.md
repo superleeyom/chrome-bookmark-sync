@@ -127,7 +127,7 @@ private static final String README_PATH = "README.md";
 
 ## 如何使用
 
-1. fork 仓库 [chrome-bookmarks-sync]()仓库
+1. fork 仓库 [chrome-bookmarks-sync](https://github.com/superleeyom/chrome-bookmark-sync)仓库
 
 2. 修改`chrome_bookmarks_sync.yml`文件的环境变量：
 
