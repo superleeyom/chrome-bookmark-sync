@@ -24,12 +24,9 @@ jobs:
     - name: execute application
       run: mvn -B clean compile exec:java --file pom.xml
 
-    - name: update README.md
-      uses: github-actions-x/commit@v2.6
-      with:
-        github-token: ${{ secrets.G_TOKEN }}
-        commit-message: ":memo: update README.md"
-        files: README.md
-        rebase: 'true'
-        name: ${{ env.GITHUB_NAME }}
-        email: ${{ env.GITHUB_EMAIL }}
+    - name: update readme
+      run: |
+        git config --local user.email "${{ env.GITHUB_EMAIL }}"
+        git config --local user.name "${{ env.GITHUB_EMAIL }}"
+        git commit -a -m '🎉update readme' || echo "nothing to commit"
+        git push || echo "nothing to push"
